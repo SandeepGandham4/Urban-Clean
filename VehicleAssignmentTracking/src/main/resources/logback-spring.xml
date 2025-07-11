@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Import Spring Boot's default configurations -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- Define properties based on your application.yml -->
+    <springProperty scope="context" name="LOG_FILE_NAME" source="logging.file.name" defaultValue="vehicle-assignment-tracking.log"/>
+    <springProperty scope="context" name="LOG_FILE_PATH" source="logging.file.path" defaultValue="./logs"/>
+    
+    <!-- Appender for Console Output -->
+    <!-- This appender logs messages to the console. It's useful for development. -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--
+                Pattern for console logs. Includes timestamp, log level, thread name, logger name, and the message.
+                %clr(...) adds color coding for readability.
+            -->
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Appender for Rolling File Output -->
+    <!-- This appender logs messages to a file and rotates the file daily or when it reaches a certain size. -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- Pattern for file logs. Similar to console but without color. -->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${LOG_FILE_PATH}/archived/${LOG_FILE_NAME}.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- Or whenever the file size reaches 10MB -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- Keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!--
+        Logger-specific levels.
+        This section allows you to set log levels for specific packages or classes.
+    -->
+
+    <!-- Set log level for JPA and Hibernate to DEBUG as specified in application.yml -->
+    <logger name="org.springframework.data.jpa" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="org.hibernate" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+    
+    <!-- Set log level for your application's code. Change com.example to your actual package name -->
+    <logger name="com.example" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+
+    <!--
+        Root logger.
+        This is the default logger that catches all logging events not caught by a more specific logger.
+    -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

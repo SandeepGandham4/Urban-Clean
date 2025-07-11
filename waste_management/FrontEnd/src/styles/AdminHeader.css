@@ -1,0 +1,215 @@
+/* Admin Header container */
+.admin-header {
+    background: #1B5E20;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    height: 64px;
+    transition: all 0.3s ease;
+}
+ 
+/* Header left section (logo, title, etc.) */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+ 
+/* Header right section (notifications, profile, etc.) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+ 
+/* Admin Dashboard title */
+.admin-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+}
+ 
+/* Hamburger menu button */
+.menu-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+.menu-btn:hover {
+    color: #e8f5e9;
+}
+ 
+/* Toggle sidebar button */
+.toggle-sidebar-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1003;
+}
+.toggle-sidebar-btn:hover {
+    color: #e8f5e9;
+}
+ 
+/* Notification badge */
+.notification-badge {
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+.notification-badge:hover {
+    color: #3498db;
+}
+.notification-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #e74c3c;
+    border-radius: 50%;
+    display: none;
+}
+.notification-badge.has-notifications::after {
+    display: block;
+}
+ 
+/* Notification count inside the badge */
+.notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+/* Profile menu toggle */
+.profile-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Increased from 0.5rem to 1rem for more spacing */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 0.5rem !important;
+    border: none !important;
+    background: none !important;
+}
+.profile-toggle::after {
+    display: none !important;
+}
+ 
+/* Profile icon in the toggle */
+.profile-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+ 
+/* Admin name in the profile menu */
+.admin-name {
+    font-weight: 500;
+    color: #ffffff;
+}
+ 
+/* Profile dropdown menu */
+.profile-dropdown {
+    margin-top: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    min-width: 200px !important;
+    background: #ffffff !important;
+}
+ 
+/* Individual items in the dropdown menu */
+.dropdown-item {
+    padding: 0.75rem 1rem !important;
+    color: #1B5E20 !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+.dropdown-item:hover {
+    background-color: #e8f5e9 !important;
+}
+ 
+/* Icon inside dropdown items */
+.dropdown-icon {
+    font-size: 1rem;
+    color: #1B5E20;
+}
+ 
+/* Divider between items in the dropdown menu */
+.dropdown-divider {
+    margin: 0.5rem 0 !important;
+    border-color: #e8f5e9 !important;
+}
+ 
+/* Sign out item in the dropdown menu */
+.signout-item {
+    color: #d32f2f !important;
+}
+.signout-item:hover {
+    background-color: #ffebee !important;
+}
+ 
+/* Responsive styles */
+@media (max-width: 768px) {
+    .admin-header {
+        padding: 0 1rem;
+    }
+ 
+    .admin-name {
+        display: none;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .admin-title {
+        font-size: 1.1rem;
+    }
+ 
+    .menu-btn, .toggle-sidebar-btn {
+        font-size: 1.25rem;
+        padding: 0.4rem;
+    }
+}
+ 
+ 
+ 

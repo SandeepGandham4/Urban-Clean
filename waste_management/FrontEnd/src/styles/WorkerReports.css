@@ -1,0 +1,321 @@
+/* Styling for the main container of the Worker Dashboard */
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Main heading style */
+.container h1 {
+    padding-top: 50px;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+ 
+/* Styling for distinct sections within the dashboard */
+.section {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Sub-heading style for sections */
+h2 {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 15px;
+}
+ 
+/* General styling for buttons within a section (e.g., Update Vehicle Status, Generate Report, Download PDF) */
+.section button {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px; /* Space between buttons */
+    margin-bottom: 10px; /* For stacking on smaller screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+ 
+/* Specific style for the "Update Vehicle Status" button (assuming it's the first button in its section) */
+.section button:first-of-type {
+    background-color: #28a745; /* Blue color */
+    color: white;
+}
+ 
+.section button:first-of-type:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+ 
+.section button:first-of-type:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+ 
+/* Styles for "Generate My Report" and "Download My PDF" buttons (targeting buttons within the div that has margin-bottom: 15px) */
+.section > div[style*="margin-bottom: 15px"] button {
+    background-color: #28a745; /* Green color */
+    color: white;
+}
+ 
+.section > div[style*="margin-bottom: 15px"] button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+ 
+.section > div[style*="margin-bottom: 15px"] button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+ 
+/* General form styling (used by "Enter Waste Log Data" form) */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+ 
+form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+ 
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1em;
+}
+ 
+form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    grid-column: 1 / -1; /* Make the button span all columns */
+    margin-top: 10px;
+}
+ 
+form button[type="submit"]:hover {
+    background-color: #218838;
+}
+ 
+/* Message styling (success/error for log entry and reports) */
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+ 
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+ 
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+ 
+/* Table styling for waste collection report */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+ 
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+ 
+table th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+ 
+/* Pagination controls for the report table */
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+ 
+.pagination-controls button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4c9e51;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+.pagination-controls button:hover {
+    background-color: #4c9e51;
+}
+ 
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.vehicle-status-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+.progress-bar-container {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 35px; /* Adjusted height to better fit the truck icon */
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+ 
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+ 
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(
+        45deg,
+        rgba(255,255,255,0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.2) 75%,
+        transparent 75%,
+        transparent
+    ); */
+    background-size: 35px 35px;
+    animation: moveStripes 1s linear infinite;
+    opacity: 0.7;
+}
+ 
+/* @keyframes moveStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 35px 0;
+    }
+} */
+ 
+.progress-icon {
+    position: absolute;
+    right: 2px;
+    height: 25px; /* Fixed height relative to progress bar */
+    width: auto;
+    color: white;
+    font-size: 1.2em; /* Adjusted size relative to container */
+    transform: scaleX(1);
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+ 
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+ 
+/* Existing styles for messages (error/success) can remain */
+.message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+ 
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+ 
+
+/* Responsive adjustments for buttons and layout on smaller screens */
+@media (max-width: 768px) {
+    .section button {
+        width: 100%; /* Full width buttons */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin for stacking */
+    }
+ 
+    .section > div[style*="margin-bottom: 15px"] {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+ 
+ 

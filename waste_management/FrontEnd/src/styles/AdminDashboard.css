@@ -1,0 +1,129 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f5fff8;
+    transition: margin-left 0.3s ease;
+    padding-top: 64px;
+}
+ 
+.admin-dashboard.sidebar-open .dashboard-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+ 
+.admin-dashboard.sidebar-closed .dashboard-content {
+    margin-left: 60px;
+    transition: margin-left 0.3s ease;
+}
+ 
+/* Main content area */
+.dashboard-content {
+    flex: 1;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+    width: calc(100% - 60px);
+    height: calc(100vh - 64px); /* Subtract header height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+ 
+/* Dashboard title */
+.dashboard-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    color: #1B5E20;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+ 
+/* Grid layout for cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 2rem; /* Add padding at bottom for scrolling */
+}
+ 
+/* Dashboard cards */
+.dashboard-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+ 
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+ 
+.card-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+ 
+.dashboard-icon {
+    font-size: 1.5rem;
+    color: #1B5E20;
+}
+ 
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1B5E20;
+    margin: 0;
+}
+ 
+.card-content {
+    flex: 1;
+}
+ 
+p {
+    color: #2E7D32;
+    font-size: 1.1rem;
+    margin: 0;
+}
+ 
+@media (max-width: 768px) {
+    .admin-dashboard {
+        padding-top: 56px; /* Smaller header on mobile */
+    }
+ 
+    .dashboard-content {
+        padding: 1rem;
+        height: calc(100vh - 56px);
+        width: 100%;
+    }
+ 
+    .dashboard-grid {
+        gap: 1rem;
+    }
+ 
+    .admin-dashboard.sidebar-open .dashboard-content,
+    .admin-dashboard.sidebar-closed .dashboard-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 0.75rem;
+    }
+ 
+    .dashboard-card {
+        padding: 1rem;
+    }
+}
+ 
+ 

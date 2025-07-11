@@ -1,0 +1,36 @@
+#server:
+#  port: 8082
+#
+#spring:
+#  application:
+#    name: VehicleAssignmentTracking
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/urbanclean?useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#         '[format_sql]': true
+#
+## Corrected logging configuration using nested indentation
+#logging:
+#  level:
+#    root: INFO
+#    '[com.example]': DEBUG
+#  file:
+#    name: vehicle-assignment-tracking.log
+#    path: /var/log/vehicle-assignment-tracking/
+#
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#  api-docs:
+#    path: /v3/api-docs
+#  packagesToScan: com.example
+#  pathsToMatch: /api/**
+#

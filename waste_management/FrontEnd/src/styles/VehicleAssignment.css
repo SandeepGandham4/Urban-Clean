@@ -1,0 +1,1402 @@
+ 
+.assignment-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5fff8;
+}
+ 
+.assignment-management h2,
+.assignment-management h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+ 
+.new-schedule-section {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* Schedule grid */
+.schedule-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+ 
+.schedule-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease;
+}
+ 
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+ 
+.zone-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+ 
+.zone-info strong {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+ 
+.time-slot {
+  color: #666;
+}
+ 
+.schedule-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.schedule-card h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+ 
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+ 
+.schedule-info {
+  flex-grow: 1;
+}
+ 
+.schedule-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+ 
+.schedule-title {
+  font-size: 0.9rem;  /* Decreased text size for schedule cards */
+  font-weight: 500;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.3;
+}
+ 
+.show-routes-btn {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+  margin-left: auto;
+}
+ 
+.show-routes-btn:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+ 
+.routes-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+ 
+.route-row {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+ 
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+ 
+.route-info p {
+  margin: 0;
+  flex: 1;
+}
+ 
+.route-info .assign-btn {
+  min-width: 80px;
+}
+ 
+/* Assignment grid - Row format */
+.assignment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+ 
+.assignment-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+ 
+.assignment-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+ 
+.assignment-info > * {
+  flex: 1;
+}
+ 
+.assignment-details {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 3;
+}
+ 
+.assignment-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+ 
+.assignment-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+ 
+/* Responsive adjustments for assignment rows */
+@media (max-width: 768px) {
+  .assignment-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+ 
+  .assignment-info {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+ 
+  .assignment-details {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}
+ 
+/* Modal vehicle list
+.vehicle-selection-list {
+  margin-top: 1rem;
+  border-top: 1px solid #e4e4e4;
+  padding-top: 0.5rem;
+}
+ 
+.vehicle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background: #f8f9fb;
+  border-radius: 4px;
+}
+ 
+.selected-vehicle-info {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #28a745;
+}
+ 
+/* Responsive
+@media (max-width: 768px) {
+  .schedule-card,
+  .assignment-card {
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    flex-direction: column;
+  }
+}
+*/
+ 
+.assignment-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5fff8;
+}
+ 
+.assignment-management h2,
+.assignment-management h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+ 
+.new-schedule-section {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* Schedule grid */
+.schedule-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+ 
+.schedule-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease;
+}
+ 
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+ 
+.zone-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+ 
+.zone-info strong {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+ 
+.time-slot {
+  color: #666;
+}
+ 
+.schedule-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.schedule-card h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+ 
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+ 
+.schedule-info {
+  flex-grow: 1;
+}
+ 
+.schedule-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+ 
+.schedule-title {
+  font-size: 0.9rem;  /* Decreased text size for schedule cards */
+  font-weight: 500;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.3;
+}
+ 
+.show-routes-btn {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+  margin-left: auto;
+}
+ 
+.show-routes-btn:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+ 
+.routes-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+ 
+.route-row {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+ 
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+ 
+.route-info p {
+  margin: 0;
+  flex: 1;
+}
+ 
+.route-info .assign-btn {
+  min-width: 80px;
+}
+ 
+/* Assignment grid - Row format */
+.assignment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+ 
+.assignment-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+ 
+.assignment-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+ 
+.assignment-info > * {
+  flex: 1;
+}
+ 
+.assignment-details {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 3;
+}
+ 
+.assignment-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+ 
+.assignment-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+ 
+/* Responsive adjustments for assignment rows */
+@media (max-width: 768px) {
+  .assignment-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+ 
+  .assignment-info {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+ 
+  .assignment-details {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}
+ 
+/* Modal vehicle list
+.vehicle-selection-list {
+  margin-top: 1rem;
+  border-top: 1px solid #e4e4e4;
+  padding-top: 0.5rem;
+}
+ 
+.vehicle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background: #f8f9fb;
+  border-radius: 4px;
+}
+ 
+.selected-vehicle-info {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #28a745;
+}
+ 
+/* Responsive
+@media (max-width: 768px) {
+  .schedule-card,
+  .assignment-card {
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    flex-direction: column;
+  }
+}
+*/
+ 
+.assignment-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5fff8;
+}
+ 
+.assignment-management h2,
+.assignment-management h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+ 
+.new-schedule-section {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* Schedule grid */
+.schedule-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+ 
+.schedule-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease;
+}
+ 
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+ 
+.zone-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+ 
+.zone-info strong {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+ 
+.time-slot {
+  color: #666;
+}
+ 
+.schedule-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.schedule-card h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+ 
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+ 
+.schedule-info {
+  flex-grow: 1;
+}
+ 
+.schedule-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+ 
+.schedule-title {
+  font-size: 0.9rem;  /* Decreased text size for schedule cards */
+  font-weight: 500;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.3;
+}
+ 
+.show-routes-btn {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+  margin-left: auto;
+}
+ 
+.show-routes-btn:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+ 
+.routes-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+ 
+.route-row {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+ 
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+ 
+.route-info p {
+  margin: 0;
+  flex: 1;
+}
+ 
+.route-info .assign-btn {
+  min-width: 80px;
+}
+ 
+/* Assignment grid - Row format */
+.assignment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+ 
+.assignment-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+ 
+.assignment-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+ 
+.assignment-info > * {
+  flex: 1;
+}
+ 
+.assignment-details {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 3;
+}
+ 
+.assignment-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+ 
+.assignment-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+ 
+/* Responsive adjustments for assignment rows */
+@media (max-width: 768px) {
+  .assignment-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+ 
+  .assignment-info {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+ 
+  .assignment-details {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}
+ 
+/* Modal styling */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+}
+ 
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1.5rem;
+}
+ 
+.modal-body {
+  padding: 1.5rem;
+}
+ 
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 1.5rem;
+}
+ 
+/* Responsive */
+@media (max-width: 768px) {
+  .assignment-management {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+ 
+  .schedule-grid,
+  .assignment-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .schedule-card,
+  .assignment-card {
+    margin-bottom: 1rem;
+  }
+ 
+  .route-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+ 
+  .assignment-actions {
+    flex-direction: column;
+  }
+ 
+  .assignment-actions button {
+    width: 100%;
+  }
+ 
+  .vehicle-selection-list {
+    max-height: 150px;
+  }
+ 
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+ 
+  .route-info {
+    flex-direction: column;
+    align-items: stretch;
+  }
+ 
+  .route-info .assign-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+ 
+  .assignment-actions {
+    flex-direction: column;
+  }
+ 
+  .assignment-actions button {
+    width: 100%;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .assignment-management {
+    padding: 10px;
+  }
+ 
+  .schedule-card,
+  .assignment-card {
+    padding: 15px;
+  }
+}
+ 
+.schedule-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+ 
+.schedule-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+ 
+.routes-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+ 
+.route-row {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background: white;
+}
+ 
+.route-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+ 
+.inline-assignment-form,
+.inline-edit-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+ 
+.vehicle-selection-list {
+    margin: 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+ 
+.vehicle-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+ 
+.selected-vehicle-info {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #e8f5e9;
+    border-radius: 4px;
+}
+ 
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+ 
+.assignment-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+ 
+.assignment-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+ 
+/* Icon styling */
+.action-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+}
+ 
+.edit-icon {
+  color: #ffc107;
+}
+ 
+.edit-icon:hover {
+  background-color: #fff3cd;
+  transform: scale(1.1);
+}
+ 
+.delete-icon {
+  color: #dc3545;
+}
+ 
+.delete-icon:hover {
+  background-color: #f8d7da;
+  transform: scale(1.1);
+}
+ 
+.no-routes-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+ 
+.inline-edit-form {
+  scroll-margin-top: 120px;
+  scroll-padding-top: 120px;
+  margin-top: 1.5rem;
+  padding: 2rem;
+  background: #f0f8ff;  /* Light blue background for edit form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+}
+ 
+.schedule-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+ 
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+ 
+.zone-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+ 
+.zone-info strong {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+ 
+.time-slot {
+  color: #666;
+}
+ 
+.show-routes-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 120px;
+  white-space: nowrap;
+  margin-left: auto;
+  transition: background-color 0.2s ease;
+}
+ 
+.show-routes-btn:hover {
+  background: #2980b9;
+}
+ 
+@media (max-width: 576px) {
+  .schedule-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+ 
+  .show-routes-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+ 
+.assignment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+.assignment-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+ 
+.assignment-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+ 
+.assignment-details {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+ 
+.assignment-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.assignment-details p strong {
+  color: #1a237e;
+  flex-shrink: 0;
+}
+ 
+.assignment-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+ 
+.status-not-started {
+  background: #fff3e0;
+  color: #e65100;
+}
+ 
+.status-completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+ 
+.status-in-progress {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+ 
+.assignment-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+ 
+.action-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: none;
+}
+ 
+.edit-icon {
+  color: #2196f3;
+}
+ 
+.edit-icon:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+  transform: scale(1.1);
+}
+ 
+.delete-icon {
+  color: #f44336;
+}
+ 
+.delete-icon:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  transform: scale(1.1);
+}
+ 
+.inline-edit-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  animation: slideDown 0.3s ease;
+}
+ 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.form-group {
+  margin-bottom: 1.2rem;
+}
+ 
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+ 
+.vehicle-selection-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+}
+ 
+.vehicle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+ 
+.vehicle-option:last-child {
+  border-bottom: none;
+}
+ 
+.selected-vehicle-info {
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background: #e8f5e9;
+  border-radius: 6px;
+  color: #2e7d32;
+}
+ 
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+ 
+.form-actions button {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+ 
+@media (max-width: 768px) {
+  .assignment-details {
+    grid-template-columns: 1fr;
+  }
+ 
+  .assignment-info {
+    flex-direction: column;
+  }
+ 
+  .assignment-actions {
+    margin-top: 1rem;
+    justify-content: flex-end;
+  }
+ 
+  .inline-edit-form {
+    padding: 1rem;
+  }
+ 
+  .form-actions {
+    flex-direction: column;
+  }
+ 
+  .form-actions button {
+    width: 100%;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .assignment-card {
+    padding: 1rem;
+    padding-bottom: 65px;
+  }
+ 
+  .assignment-actions {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+ 
+  .action-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+ 
+.assignment-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  padding-right: 120px; /* Make space for action icons */
+}
+ 
+.assignment-info {
+  flex: 1;
+  min-width: 250px;
+}
+ 
+.assignment-actions {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.8rem;
+  margin: 0;
+}
+ 
+.action-icon {
+  width: 42px;
+  height: 42px;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  border: 1px solid;
+}
+ 
+.edit-icon {
+  color: #2196f3;
+  border-color: rgba(33, 150, 243, 0.3);
+}
+ 
+.delete-icon {
+  color: #f44336;
+  border-color: rgba(244, 67, 54, 0.3);
+}
+ 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .assignment-card {
+    padding: 1.2rem;
+    padding-bottom: 70px; /* Make space for action icons at bottom */
+  }
+ 
+  .assignment-info {
+    width: 100%;
+  }
+ 
+  .assignment-actions {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    top: auto;
+    transform: none;
+  }
+ 
+  .action-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .assignment-card {
+    padding: 1rem;
+    padding-bottom: 65px;
+  }
+ 
+  .assignment-actions {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+ 
+  .action-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+ 
+.assignment-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+ 
+.assignment-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: auto;  /* Push controls to the right */
+}
+ 
+.search-bar {
+  width: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+ 
+.search-bar .form-control {
+  border-right: none;
+}
+ 
+.search-icon {
+  background-color: white;
+  border-left: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.search-icon:hover {
+  background-color: #f8f9fa;
+}

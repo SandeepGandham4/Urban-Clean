@@ -1,0 +1,438 @@
+.pickup-scheduling-container {
+    min-height: 50vh;
+    background-color: #f5fff8;
+    padding-top: 64px;
+  }
+   
+  .admin-header {
+    background: #1B5E20;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    height: 64px;
+  }
+   
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+   
+  .admin-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+  }
+   
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+   
+  .notification-icon {
+    position: relative;
+    cursor: pointer;
+    color: #ffffff;
+  }
+   
+  .notification-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.75rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .profile-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 0.5rem !important;
+    border: none !important;
+    background: none !important;
+  }
+   
+  .profile-toggle::after {
+    display: none !important;
+  }
+   
+  .profile-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+   
+  .admin-name {
+    font-weight: 500;
+    color: #ffffff;
+  }
+   
+  .profile-dropdown {
+    margin-top: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    min-width: 200px !important;
+  }
+   
+  .dropdown-item {
+    padding: 0.75rem 1rem !important;
+    color: #1B5E20 !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+   
+  .dropdown-item:hover {
+    background-color: #e8f5e9 !important;
+  }
+   
+  .dropdown-icon {
+    font-size: 1rem;
+    color: #1B5E20;
+  }
+   
+  .dropdown-divider {
+    margin: 0.5rem 0 !important;
+    border-color: #e8f5e9 !important;
+  }
+   
+  .signout-item {
+    color: #d32f2f !important;
+  }
+   
+  .signout-item:hover {
+    background-color: #ffebee !important;
+  }
+   
+  .pickup-scheduling {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+   
+  .pickup-scheduling h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+   
+  .schedule-form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+   
+  .schedule-form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+   
+  .card-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+   
+  .dashboard-icon {
+    font-size: 1.5rem;
+    color: #1B5E20;
+  }
+   
+  .card-icon-title h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1B5E20;
+    margin: 0;
+  }
+   
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+   
+  .form-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+   
+  .form-control,
+  .form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+  }
+   
+  .form-control:focus,
+  .form-select:focus {
+    border-color: #1B5E20;
+    box-shadow: 0 0 0 2px rgba(27, 94, 32, 0.2);
+    outline: none;
+  }
+   
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+   
+  .btn-schedule {
+    background-color: #1B5E20;
+    border-color: #1B5E20;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 150px;
+  }
+   
+  .btn-schedule:hover {
+    background-color: #2E7D32;
+    border-color: #2E7D32;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+  }
+   
+  .schedule-table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+   
+  .table {
+    margin-bottom: 0;
+    width: 100%;
+  }
+   
+  .table th {
+    background-color: #1B5E20;
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+    border-bottom: none;
+  }
+   
+  .table td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: #2c3e50;
+  }
+   
+  .table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+   
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+   
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+  }
+   
+  .alert {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+  }
+   
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+   
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+   
+  /* Add styles to align the header to the left */
+.pickup-schedules-header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pickup-schedules-header {
+    text-align: left;
+    margin: 0;
+}
+   
+  /* Update the search icon button styles to match the search bar color */
+.search-icon-button {
+    background: #fff; /* Match the search bar background color */
+    border: none;
+    padding: 0.5rem;
+    color: #1B5E20; /* Match the text color of the search bar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+   
+  /* Adjust the layout of the buttons to be in left-to-right direction with 1cm space between them */
+.action-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1cm; /* Add 1cm space between buttons */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+}
+
+.edit-button {
+    background-color: orange;
+    color: white;
+    border: none;;
+}
+
+.edit-button:hover {
+    background-color: darkorange;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5);
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+}
+
+/* Update the icon button styles to match ZoneManagement */
+.action-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+}
+
+.edit-icon {
+  color: #ffc107;
+}
+
+.edit-icon:hover {
+  background-color: #fff3cd;
+  transform: scale(1.1);
+}
+
+.delete-icon {
+  color: #dc3545;
+}
+
+.delete-icon:hover {
+  background-color: #f8d7da;
+  transform: scale(1.1);
+}
+
+.zone-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+   
+  @media (max-width: 768px) {
+    .pickup-scheduling {
+      padding: 1rem;
+    }
+   
+    .schedule-form-container,
+    .schedule-table-container {
+      padding: 1rem;
+    }
+   
+    .form-buttons {
+      flex-direction: column;
+    }
+   
+    .btn-schedule {
+      width: 100%;
+    }
+   
+    .admin-name {
+      display: none;
+    }
+  }
+   
+  @media (max-width: 480px) {
+    .pickup-scheduling {
+      padding: 0.75rem;
+    }
+   
+    .card-icon-title h2 {
+      font-size: 1.1rem;
+    }
+   
+    .form-control,
+    .form-select {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+   
+    .table th,
+    .table td {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }

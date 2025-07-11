@@ -1,0 +1,425 @@
+.zone-management {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f5fff8;
+    font-family: 'Segoe UI', sans-serif;
+}
+ 
+.zone-management h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+ 
+/* Add Zone Button */
+.zone-management > .btn {
+    display: block;
+    margin: 0 auto 30px auto;
+    background-color: #f5f5dc; /* beige */
+    border-color: #d7ccc8;
+    color: #4e342e;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+ 
+.zone-management > .btn:hover {
+    background-color: #e0d7b5;
+    transform: scale(1.05);
+}
+ 
+/* .zone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+} */
+.zone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+ 
+.zone-block {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+ 
+.zone-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+ 
+.zone-content {
+    flex-grow: 1;
+}
+ 
+.zone-name {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+ 
+.zone-details {
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+}
+ 
+/* Zone Actions Container */
+.zone-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 1rem;
+    width: 100%;
+}
+ 
+/* Ensure buttons stay inside the zone-block and adjust width dynamically */
+.zone-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 200px;
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+ 
+.zone-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+ 
+.zone-actions button,
+.zone-actions a button {
+    flex: 1 1 calc(33.33% - 10px); /* Adjust button width dynamically */
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+/* Update and Delete buttons - Equal width */
+.zone-actions button[variant="warning"],
+.zone-actions button[variant="danger"] {
+    width: 100px;
+    min-width: 100px;
+    flex: 0 0 100px;
+}
+ 
+/* Add Routes Button - Content width */
+.zone-actions a {
+    padding: 0;
+    flex: 0 0 auto;
+}
+ 
+.zone-actions a button[variant="info"] {
+    padding: 0.75rem 1.2rem;
+    width: auto;
+    min-width: min-content;
+}
+ 
+/* Update Button */
+.zone-actions button[variant="warning"] {
+    background: linear-gradient(135deg, #ffd700 0%, #ffc400 100%);
+    color: #000;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+}
+ 
+.zone-actions button[variant="warning"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(135deg, #ffc400 0%, #ffb300 100%);
+}
+ 
+/* Delete Button */
+.zone-actions button[variant="danger"] {
+    background: linear-gradient(135deg, #ff4444 0%, #ff1a1a 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 68, 68, 0.2);
+}
+ 
+.zone-actions button[variant="danger"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+    background: linear-gradient(135deg, #ff1a1a 0%, #ff0000 100%);
+}
+ 
+/* Add Routes Button */
+.zone-actions a button[variant="info"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+ 
+.zone-actions a button[variant="info"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+}
+ 
+/* Active state for all buttons */
+.zone-actions button:active,
+.zone-actions a button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Header and Search Bar */
+.zone-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+ 
+.zone-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+ 
+.search-bar {
+    width: 300px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+ 
+.search-bar .form-control {
+    border-right: none;
+}
+ 
+.search-icon {
+    background-color: white;
+    border-left: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+.search-icon:hover {
+    background-color: #f8f9fa;
+}
+ 
+/* Modal styling */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+ 
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+ 
+.modal-body {
+    padding: 1.5rem;
+}
+ 
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+ 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+ 
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+ 
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+ 
+.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+}
+ 
+/* Add Zone Form Section */
+.add-zone-form-container {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+   
+    transition: all 0.3s ease-in-out;
+   
+    /* border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+ 
+.add-zone-form-container.hidden {
+    display: none;
+}
+ 
+.add-zone-form-container.visible {
+    display: block;
+   
+    margin: 1.5rem auto 2rem;
+}
+ 
+.add-zone-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+ 
+.form-group {
+    margin-bottom: 1rem;
+}
+ 
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+ 
+.form-buttons button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ 
+.form-buttons .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+ 
+.form-buttons .cancel-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+ 
+.form-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .zone-management {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+ 
+    .zone-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    .zone-block {
+        padding: 1rem;
+    }
+ 
+    .zone-actions {
+        flex-direction: column;
+    }
+ 
+    .add-zone-form-container.visible {
+        padding: 1.5rem;
+        margin: 1rem auto 1.5rem;
+    }
+ 
+    .add-zone-form {
+        grid-template-columns: 1fr;
+    }
+ 
+    .form-buttons {
+        flex-direction: column;
+    }
+ 
+    .form-buttons button {
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .zone-management {
+        padding: 0.75rem;
+    }
+ 
+    .zone-name {
+        font-size: 1.1rem;
+    }
+ 
+    .add-zone-form-container.visible {
+        padding: 1rem;
+        margin: 0.75rem auto 1rem;
+    }
+}
+ 
+/* Icon-only buttons styles */
+.action-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+}
+ 
+.edit-icon {
+  color: #ffc107;
+}
+ 
+.edit-icon:hover {
+  background-color: #fff3cd;
+  transform: scale(1.1);
+}
+ 
+.delete-icon {
+  color: #dc3545;
+}
+ 
+.delete-icon:hover {
+  background-color: #f8d7da;
+  transform: scale(1.1);
+}
+ 
+.fa-route {
+  color: #17a2b8;
+}
+ 
+.fa-route:hover {
+  background-color: #e3f4f6;
+  transform: scale(1.1);
+}
+ 
+.zone-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+ 
+ 

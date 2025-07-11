@@ -1,0 +1,143 @@
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: #1B5E20;
+    color: #ffffff;
+    padding-top: 64px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Sidebar header */
+.sidebar-header {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+/* Sidebar title */
+.sidebar h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+}
+ 
+/* Close button */
+.close-btn {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+ 
+.close-btn:hover {
+    color: #e8f5e9;
+}
+ 
+/* Sidebar menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+ 
+.sidebar-menu li {
+    margin-bottom: 0.25rem;
+    padding: 0 0.75rem;
+}
+ 
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border-radius: 8px;
+    gap: 8px;
+    width: calc(100% - 1.5rem);
+}
+ 
+.sidebar-menu a:hover,
+.sidebar-menu a.active-link {
+    background: #2E7D32;
+    color: #ffffff;
+}
+ 
+/* Menu icons */
+.menu-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+ 
+.menu-text {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+ 
+/* Collapsed state */
+.sidebar.closed {
+    width: 60px;
+}
+ 
+.sidebar.closed .menu-text,
+.sidebar.closed h2,
+.sidebar.closed .close-btn {
+    display: none;
+}
+ 
+.sidebar.closed .sidebar-menu li {
+    padding: 0 0.5rem;
+}
+ 
+.sidebar.closed .sidebar-menu a {
+    justify-content: center;
+    padding: 0.75rem;
+    width: 48px;
+}
+ 
+.sidebar.closed .menu-icon {
+    margin: 0;
+    width: 24px;
+}
+ 
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+ 
+    .sidebar.open {
+        transform: translateX(0);
+        width: 250px;
+    }
+}
+ 
+ 
+ 

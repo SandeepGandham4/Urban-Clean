@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <property name="LOG_PATTERN" value='{"timestamp":"%d{yyyy-MM-dd HH:mm:ss.SSS}", "level":"%.-1level", "thread":"%thread", "class":"%logger{40}", "message":"%msg", "traceId":"%X{traceId}", "spanId":"%X{spanId}"}%n'/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        </root>
+
+    <logger name="com.example.sreloggingdemo" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache.catalina" level="WARN"/>
+
+</configuration>

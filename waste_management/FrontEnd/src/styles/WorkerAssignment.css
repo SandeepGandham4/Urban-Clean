@@ -1,0 +1,220 @@
+.worker-assignment {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f5fff8;
+  font-family: 'Segoe UI', sans-serif;
+}
+ 
+.worker-assignment h2, h3, h4 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+ 
+.worker-assignment h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+ 
+.schedule-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+ 
+.schedule-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.schedule-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+ 
+.schedule-header strong {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+ 
+.routes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+ 
+.route-button {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+}
+ 
+.worker-selection {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+ 
+.worker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+ 
+.worker-item:last-child {
+  margin-bottom: 0;
+}
+ 
+.worker-item span {
+  flex: 1;
+}
+ 
+.assignment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+.assignment-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+ 
+.form-group {
+  margin-bottom: 1rem;
+}
+ 
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+ 
+.form-control,
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+ 
+.form-control:focus,
+.form-select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Header and Search Bar */
+.worker-assignment-header {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+padding: 0 20px;
+}
+ 
+.worker-controls {
+  display: flex;
+gap: 15px;
+align-items: center;
+margin-left: auto;  /* Push controls to the right */
+}
+ 
+/* Update button styles to have a white background */
+.action-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.action-icon:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.save-icon {
+    color: #28a745; /* Green for save */
+}
+
+.cancel-icon {
+    color: #6c757d; /* Gray for cancel */
+}
+
+.edit-icon {
+    color: #ffc107; /* Yellow for edit */
+}
+
+.delete-icon {
+    color: #dc3545; /* Red for delete */
+}
+
+@media (max-width: 768px) {
+  .worker-assignment {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+ 
+  .schedule-list {
+    grid-template-columns: 1fr;
+  }
+ 
+  .routes-container {
+    grid-template-columns: 1fr;
+  }
+ 
+  .worker-item {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+ 
+  .worker-item .btn {
+    width: 100%;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .worker-assignment {
+    padding: 0.75rem;
+  }
+ 
+  .schedule-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
